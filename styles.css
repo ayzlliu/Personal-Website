@@ -21,6 +21,7 @@ body {
 
 .resume {
     position: fixed;
+    z-index: 1000;
     top: 60px;
     right: 100px;
     color: #FFFFFF;
