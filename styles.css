@@ -88,7 +88,7 @@ ul {
     }
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1300px) {
     .container {
         max-width: 1024px;
     }
@@ -159,21 +159,20 @@ ul {
 
 @media (max-width: 768px) {
     .my_image, .rc_car {
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        bottom: 50px;
-        right: 20px;
+        width: 100px;
+        height: 100px;
+        left: 5px;
+        position: relative;
+        display: block;
+        margin: 5px auto;
     }
 
     .my_image {
-        bottom: 150px;
-        right: 20px;
+        margin-top: -100px;
     }
 
     .rc_car {
-        bottom: 50px;
-        right: 20px;
+        margin-top: -100px;
     }
 }
 
@@ -181,18 +180,24 @@ ul {
     .my_image, .rc_car {
         width: 100px;
         height: 100px;
+        left: 5px;
         position: relative;
         display: block;
         margin: 5px auto;
     }
 
     .my_image {
-        margin-bottom: 5px;
+        margin-top: -100px;
     }
 
     .rc_car {
-        margin-top: 5px;
+        margin-top: -100px;
+    }
+
+    .logos {
+        bottom: 20px;
+        left: auto;
+        right: 10px;
+        width: auto;
     }
 }
-
-
