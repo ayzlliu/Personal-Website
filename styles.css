@@ -1,0 +1,198 @@
+body {
+    background-color: #2e9c9c;
+    font-family: 'Quicksand';
+    font-size: 19px;
+    color: #FFFFFF;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+
+.centered {
+    position: relative;
+    margin-top: 140px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 55px;
+}
+
+.resume {
+    position: fixed;
+    top: 60px;
+    right: 100px;
+    color: #FFFFFF;
+    font-size: medium;
+    text-decoration: none;
+}
+
+.resume:hover {
+    color: #f0f0f0;
+}
+
+.intro {
+    position: relative;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.experience {
+    position: relative;
+    margin-top: 40px;
+}
+
+ul {
+    list-style-type: circle;
+    padding-left: 20px;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+.logos {
+    position: fixed;
+    bottom: 70px;
+    left: 100px;
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+}
+
+.logos a {
+    color: #FFFFFF;
+}
+
+.my_image, .rc_car {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.my_image {
+    top: 150px;
+    right: 200px; 
+}
+
+.rc_car {
+    top: 270px;
+    right: 50px;
+}
+
+@media (max-width: 1536px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        max-width: 475px;
+    }
+}
+
+@media (max-width: 475px) {
+    .container {
+        width: 100%;
+    }
+
+    .centered {
+        font-size: 32px;
+        margin-top: 60px;
+    }
+
+    .resume {
+        font-size: small;
+        right: 10px;
+    }
+
+    .intro {
+        font-size: 18px;
+    }
+
+    .logos {
+        bottom: 20px;
+        left: auto;
+        right: 10px;
+        width: auto;
+    }
+}
+
+.my_image, .rc_car {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.my_image {
+    top: 150px;
+    right: 200px;
+}
+
+.rc_car {
+    top: 270px;
+    right: 50px;
+}
+
+@media (max-width: 768px) {
+    .my_image, .rc_car {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        bottom: 50px;
+        right: 20px;
+    }
+
+    .my_image {
+        bottom: 150px;
+        right: 20px;
+    }
+
+    .rc_car {
+        bottom: 50px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 475px) {
+    .my_image, .rc_car {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: block;
+        margin: 5px auto;
+    }
+
+    .my_image {
+        margin-bottom: 5px;
+    }
+
+    .rc_car {
+        margin-top: 5px;
+    }
+}
+
+
