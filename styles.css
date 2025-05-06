@@ -144,7 +144,7 @@ ul {
     position: fixed;
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+    border-radius: 80%;
     object-fit: cover;
 }
 
@@ -154,7 +154,7 @@ ul {
 }
 
 .rc_car {
-    top: 270px;
+    top: 300px;
     right: 50px;
 }
 
