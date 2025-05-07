@@ -63,12 +63,12 @@ ul {
 }
 
 .logos {
-    position: fixed;
-    bottom: 70px;
-    left: 100px;
     display: flex;
-    justify-content: space-between;
-    width: 120px;
+    justify-content: center;
+    gap: 20px;
+    position: static; 
+    margin-top: 60px;
+    margin-bottom: 80px;
 }
 
 .logos a {
@@ -83,18 +83,23 @@ ul {
 }
 
 .my_image {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     position: relative;
     border-radius: 80%;
     object-fit: cover;
+    top: -330px;
+    right: 25px;
 }
 
 .rc_car {
-    width: 200px;
-    height: 150px;
-    top: 300px;
-    right: 50px;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    position: relative;
+    top: -220px;
+    right: 30px;
+    border-radius: 50%;
 }
 
 @media (max-width: 1536px) {
@@ -155,23 +160,8 @@ ul {
 }
 
 .my_image, .rc_car {
-    border-radius: 80%;
+    border-radius: 50%;
     object-fit: cover;
-}
-
-.my_image {
-    top: 95px;
-    right: 200px;
-}
-
-.rc_car {
-    width: 280px;        
-    height: auto;        
-    object-fit: contain;  
-    position: fixed;
-    top: 250px;
-    right: 100px;
-    border-radius: 10px;
 }
 
 @media (max-width: 768px) {
@@ -212,7 +202,8 @@ ul {
     }
 
     .logos {
-        bottom: 20px;
+        position: relative;
+        bottom: 10px;
         left: auto;
         right: 10px;
         width: auto;
@@ -227,6 +218,10 @@ ul {
 }
 
 .card {
+    background-color: rgba(255, 255, 255, 0.15); 
+    color: #fff; 
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
     transition: transform 0.2s ease-in-out;
 }
 
@@ -234,4 +229,18 @@ ul {
     transform: translateY(-5px);
 }
 
+.project-card-sm {
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+}
+
+.project-card-sm .card-img-top {
+    height: 150px;
+    object-fit: cover;
+}
+
+body {
+    overflow-x: hidden;
+}
 
