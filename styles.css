@@ -78,7 +78,7 @@ ul {
 .image-wrapper {
     display: flex;
     justify-content: flex-end;
-    margin-top: -600px;
+    margin-top: -800px;
     margin-right: -100px;
 }
 
@@ -230,13 +230,13 @@ ul {
 }
 
 .project-card-sm {
-    max-width: 300px;
+    max-width: 370px;
     margin: 0 auto;
     font-size: 0.9rem;
 }
 
 .project-card-sm .card-img-top {
-    height: 150px;
+    height: 200px;
     object-fit: cover;
 }
 
