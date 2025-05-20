@@ -89,7 +89,7 @@ ul {
     position: relative;
     border-radius: 80%;
     object-fit: cover;
-    top: -330px;
+    top: -800px;
     right: 25px;
 }
 
@@ -98,7 +98,7 @@ ul {
     height: 180px;
     object-fit: cover;
     position: relative;
-    top: -220px;
+    top: -680px;
     right: 30px;
     border-radius: 50%;
 }
@@ -170,7 +170,7 @@ ul {
 
 .project-card-sm {
     max-width: 370px;
-    margin: 0 auto;
+    margin: 0 auto 1rem auto;
     font-size: 0.9rem;
 }
 
