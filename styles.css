@@ -1,9 +1,8 @@
-
 body {
-    background-color: #7cb9e8;
+    background-color: #EFECE4;
     font-family: 'Quicksand';
     font-size: 19px;
-    color: #FFFFFF;
+    color: #111111;
     overflow-x: hidden;
 }
 
@@ -13,22 +12,46 @@ body {
     padding: 0 0.5rem;
 }
 
+.heading-wrapper {
+    position: relative;
+    display: block;             
+    width: fit-content;         
+    color: #AB2330D9;
+    margin: 150px auto 0 auto;  
+    transform: translateX(-400px) scale(1.2);
+}
+
 .centered {
-    left: 420px;
     font-family: "Lora", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: italic;
     position: relative;
-    margin-top: 140px;
     text-align: center;
-    color: #FFFFFF;
-    font-size: 60px;
-    padding: 10px 30px; 
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 30px; 
-    display: inline-block; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    color: #1A1A1A;
+    font-size: 40px;
+    padding: 10px 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.corner {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+}
+
+.corner.tl {
+    top: -11px;
+    left: -10px;
+}
+
+.corner.br {
+    bottom: -2px;
+    right: -10px;
 }
 
 .resume {
@@ -36,13 +59,14 @@ body {
     z-index: 1000;
     top: 60px;
     right: 100px;
-    color: #FFFFFF;
+    color: #1A1A1A;
     font-size: medium;
     text-decoration: none;
 }
 
 .resume:hover {
-    color: #f0f0f0;
+    color: #1A1A1A;
+    text-decoration: underline;
 }
 
 .intro {
@@ -50,6 +74,13 @@ body {
     margin-top: 50px;
     text-align: center;
     font-size: 22px;
+    transform: translateX(-290px);
+}
+
+.accent-underline {
+  border-bottom: 4px solid rgba(171, 35, 48, 0.85);
+  padding-bottom: 1px;
+  border-radius: 3px;
 }
 
 .experience {
@@ -73,7 +104,7 @@ ul {
 }
 
 .logos a {
-    color: #FFFFFF;
+    color: #1A1A1A;
 }
 
 .image-wrapper {
@@ -107,7 +138,11 @@ ul {
     .centered {
         font-size: 40px;
         margin-top: 100px;
-        left: auto;
+    }
+
+    .corner {
+        width: 40px;
+        height: 40px;
     }
 
     .my_image, .rc_car {
@@ -126,17 +161,14 @@ ul {
 }
 
 @media (max-width: 475px) {
-    .my_image, .rc_car {
-        width: 100px;
-        height: 100px;
-        margin: 5px;
-        top: 0;
-        right: 0;
-    }
-
     .centered {
         font-size: 32px;
         margin-top: 60px;
+    }
+
+    .corner {
+        width: 32px;
+        height: 32px;
     }
 
     .resume {
@@ -146,6 +178,14 @@ ul {
 
     .intro {
         font-size: 18px;
+    }
+
+    .my_image, .rc_car {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        top: 0;
+        right: 0;
     }
 }
 
@@ -157,10 +197,10 @@ ul {
 }
 
 .card {
-    background-color: rgba(255, 255, 255, 0.15); 
-    color: #fff; 
-    backdrop-filter: blur(10px); 
-    border: 1px solid rgba(255, 255, 255, 0.2); 
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.2s ease-in-out;
 }
 
