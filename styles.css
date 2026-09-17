@@ -1,12 +1,19 @@
 :root {
   --bg: #faf9f6;
-  --mint-green-rgb: 125 195 135;
+  --ink: #111111;
+  --ink-soft: #1a1a1a;
+  --accent: #e15a38;
+
+  /* mint-green tints the wash; mint-light is the pale halo behind the heading */
+  --mint-green-rgb: 180 225 205;
   --mint-light-rgb: 219 233 234;
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 
 body {
-  background-color: #faf9f6;
-  font-family: "Quicksand";
+  background-color: var(--bg);
+  font-family: "Quicksand", sans-serif;
   font-size: 19px;
   color: #111111;
   overflow-x: hidden;
@@ -25,17 +32,17 @@ body {
     ),
     radial-gradient(
       900px 520px at 32% 46%,
-      rgba(180, 225, 205, 0.28) 0%,
-      rgba(180, 225, 205, 0.18) 40%,
-      rgba(180, 225, 205, 0.08) 65%,
+      rgb(var(--mint-green-rgb) / 0.28) 0%,
+      rgb(var(--mint-green-rgb) / 0.18) 40%,
+      rgb(var(--mint-green-rgb) / 0.08) 65%,
       transparent 78%
     ),
     radial-gradient(
       1200px 680px at 34% 48%,
-      rgba(219, 233, 234, 0.96) 0%,
-      rgba(219, 233, 234, 0.88) 30%,
-      rgba(219, 233, 234, 0.65) 52%,
-      rgba(219, 233, 234, 0.35) 68%,
+      rgb(var(--mint-light-rgb) / 0.96) 0%,
+      rgb(var(--mint-light-rgb) / 0.88) 30%,
+      rgb(var(--mint-light-rgb) / 0.65) 52%,
+      rgb(var(--mint-light-rgb) / 0.35) 68%,
       transparent 82%
     ),
     linear-gradient(
@@ -45,7 +52,7 @@ body {
       rgba(170, 225, 195, 0.42) 40%,
       rgba(180, 230, 205, 0.4) 60%,
       rgba(195, 235, 215, 0.36) 78%,
-      rgba(219, 233, 234, 0.3) 100%
+      rgb(var(--mint-light-rgb) / 0.3) 100%
     );
 }
 
@@ -71,7 +78,7 @@ body::before {
   position: relative;
   display: block;
   width: fit-content;
-  color: #e15a38;
+  color: var(--accent);
   margin: 150px auto 0 auto;
   max-width: 900px;
   transform: translateX(-400px);
@@ -86,14 +93,13 @@ body::before {
   z-index: 10;
   text-align: center;
   color: #000000;
-  font-size: 40px;
-  padding: 10px 30px;
+  /* 48px renders crisply; scaling a 40px box blurred the text and the shadow */
+  font-size: 48px;
+  padding: 12px 36px;
   background: rgba(255, 255, 255, 0.85);
   border-radius: 12px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.06);
   display: inline-block;
-  transform: scale(1.2);         
-  transform-origin: center;
 }
 
 .corner {
@@ -118,13 +124,14 @@ body::before {
   z-index: 1000;
   top: -80px;
   right: 50px;
-  color: #1a1a1a;
+  color: var(--ink-soft);
   font-size: medium;
   text-decoration: none;
+  transition: color 0.2s var(--ease-out);
 }
 
 .resume:hover {
-  color: #1a1a1a;
+  color: var(--accent);
   text-decoration: underline;
 }
 
@@ -137,7 +144,7 @@ body::before {
 }
 
 .accent-underline {
-  background-image: linear-gradient(#e15a38, #e15a38);
+  background-image: linear-gradient(var(--accent), var(--accent));
   background-repeat: repeat-x;
   background-size: 100% 5px;
   background-position: 0 1.08em;
@@ -149,6 +156,20 @@ body::before {
 .experience {
   position: relative;
   margin-top: 40px;
+}
+
+/* spacing previously carried by inline styles on each <li> */
+.experience li {
+  margin-bottom: 20px;
+}
+
+.experience li:last-child {
+  margin-bottom: 0;
+}
+
+/* the 5px accent reads as heavy at body size, so thin it out here */
+.experience .accent-underline {
+  background-size: 100% 3px;
 }
 
 ul {
@@ -167,7 +188,15 @@ ul {
 }
 
 .logos a {
-  color: #1a1a1a;
+  color: var(--ink-soft);
+  font-size: 30px;
+  line-height: 1;
+  transition: color 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+}
+
+.logos a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
 }
 
 .image-wrapper {
@@ -381,10 +410,12 @@ ul {
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
   border-radius: 18px;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
 }
+/* lift and deepen the shadow together, so the card reads as rising off the page */
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.13), 0 6px 16px rgba(0, 0, 0, 0.07);
 }
 .project-card-sm {
   max-width: 370px;
@@ -416,6 +447,29 @@ ul {
     rgba(255, 220, 120, 0.25),
     transparent 70%
   );
+}
+
+/* keyboard-only focus ring; mouse clicks stay clean */
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .card:hover,
+  .logos a:hover {
+    transform: none;
+  }
 }
 
 
