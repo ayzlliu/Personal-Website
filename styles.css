@@ -78,10 +78,8 @@ body::before {
   position: relative;
   display: block;
   width: fit-content;
-  color: var(--accent);
   margin: 150px auto 0 auto;
   max-width: 900px;
-  transform: translateX(-400px);
 }
 
 .centered {
@@ -93,30 +91,9 @@ body::before {
   z-index: 10;
   text-align: center;
   color: #000000;
-  /* 48px renders crisply; scaling a 40px box blurred the text and the shadow */
-  font-size: 48px;
-  padding: 12px 36px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 12px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.06);
+  font-size: 64px;
+  margin: 0;
   display: inline-block;
-}
-
-.corner {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  pointer-events: none;
-}
-
-.corner.tl {
-  top: -18px;
-  left: -45px;
-}
-
-.corner.br {
-  bottom: -10px;
-  right: -45px;
 }
 
 .resume {
@@ -237,12 +214,8 @@ ul {
     left: 110px;
   }
 
- .heading-wrapper {
-    right: -100px;
-  }
-
   .intro{
-    transform: translateX(-180px);       
+    transform: translateX(-180px);
   }
 }
 
@@ -256,23 +229,14 @@ ul {
     margin-left: 10px; 
 }
 
-  .heading-wrapper {
-    right: -100px;
-  }
-
   .intro{
-    transform: translateX(-180px);       
+    transform: translateX(-180px);
   }
 }
 
 @media (max-width: 1024px) {
   .centered {
-    font-size: 40px;
-    margin-top: 100px;
-  }
- 
-  .corner.tl {
-    top: 80px;
+    font-size: 52px;
   }
 
   .intro {
@@ -285,11 +249,8 @@ ul {
   }
 
   .rc_car {
-    top: -930px;  
-    left: 0px; 
-  }
-  .heading-wrapper {
-    left: 150px;
+    top: -930px;
+    left: 0px;
   }
 }
 
@@ -311,15 +272,10 @@ ul {
   .intro {
     left: 90px;
   }
-
-  .heading-wrapper {
-    transform: translateX(-350px);
-  }
 }
 
 @media (max-width: 900px) {
   .heading-wrapper {
-    transform: translateX(-310px);
     margin: 110px auto 0 auto;
   }
   .intro {
@@ -331,7 +287,6 @@ ul {
 
 @media (max-width: 768px) {
   .heading-wrapper {
-    transform: translateX(-160px);
     margin: 110px auto 0 auto;
   }
   .intro {
@@ -354,19 +309,8 @@ ul {
 }
 
 @media (max-width: 475px) {
-  .intro {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 475px) {
   .centered {
-    font-size: 32px;
-    margin-top: 60px;
-  }
-  .corner {
-    width: 32px;
-    height: 32px;
+    font-size: 40px;
   }
   .resume {
     font-size: small;
@@ -382,19 +326,8 @@ ul {
 
   .rc_car {
     top: 820px;  
-    left: -20px; 
+    left: -20px;
   }
-
-  .corner.tl {
-    top: 47px;
-    left: -35px;
-  }
-
-  .corner.br {
-    top: 100px;
-    left: 285px;
-  }
-
 }
 
 .card-img-top {
