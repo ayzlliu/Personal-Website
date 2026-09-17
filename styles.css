@@ -60,26 +60,41 @@ body::before {
   content: none;
 }
 
-.container,
-.heading-wrapper,
-.intro,
-.experience {
+.page {
   position: relative;
   z-index: 5;
-}
-
-.container {
-  width: 100%;
+  max-width: 1500px;
   margin: 0 auto;
-  padding: 0 0.5rem;
+  /* the left gutter is the defining move: content hangs off it, never centered */
+  padding: 0 clamp(24px, 5vw, 96px);
 }
 
-.heading-wrapper {
-  position: relative;
-  display: block;
-  width: fit-content;
-  margin: 150px auto 0 auto;
-  max-width: 900px;
+/* content column on the left, photo rail on the right */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  column-gap: clamp(32px, 6vw, 110px);
+  align-items: start;
+  margin-top: 96px;
+}
+
+.hero-body {
+  max-width: 44rem;
+}
+
+.photo-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.rail-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .centered {
@@ -91,16 +106,21 @@ body::before {
   z-index: 10;
   text-align: center;
   color: #000000;
-  font-size: 64px;
+  font-size: clamp(44px, 6vw, 76px);
+  line-height: 1.05;
   margin: 0;
-  display: inline-block;
+  text-align: left;
+}
+
+/* a real header row, so the link can never collide with the photo rail */
+.site-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 28px;
+  padding-top: 38px;
 }
 
 .resume {
-  position: absolute;
-  z-index: 1000;
-  top: -80px;
-  right: 50px;
   color: var(--ink-soft);
   font-size: medium;
   text-decoration: none;
@@ -113,11 +133,10 @@ body::before {
 }
 
 .intro {
-  position: relative;
-  margin-top: 50px;
-  text-align: center;
-  font-size: 22px;
-  transform: translateX(-290px);
+  margin-top: 28px;
+  font-size: 24px;
+  line-height: 1.5;
+  max-width: 34rem;
 }
 
 .accent-underline {
@@ -149,11 +168,10 @@ body::before {
   background-size: 100% 3px;
 }
 
-ul {
+.experience ul {
   list-style-type: circle;
-  padding-left: 20px;
-  margin: 20px auto;
-  width: fit-content;
+  padding-left: 22px;
+  margin: 20px 0;
 }
 
 .logos {
@@ -176,157 +194,30 @@ ul {
   transform: translateY(-3px);
 }
 
-.image-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: -800px;
-  margin-right: 10px;
-}
-
-.my_image {
-  width: 180px;
-  height: 180px;
-  position: relative;
-  border-radius: 80%;
-  object-fit: cover;
-  top: -780px;
-  right: 10px;
-}
-
-.rc_car {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  position: relative;
-  top: -700px;
-  right: 0px;
-  border-radius: 50%;
-}
-
-@media (max-width: 1400px) {
-  .my_image {
-    top: -800px;
-    left: 100px;
-  }
-
-  .rc_car {
-    top: -800px;
-    left: 110px;
-  }
-
-  .intro{
-    transform: translateX(-180px);
-  }
-}
-
-@media (max-width: 1200px) {
-  .my_image {
-    top: -930px;   
-  }
-
-  .rc_car {
-    top: -930px;  
-    margin-left: 10px; 
-}
-
-  .intro{
-    transform: translateX(-180px);
-  }
-}
-
-@media (max-width: 1024px) {
-  .centered {
-    font-size: 52px;
-  }
-
-  .intro {
-    left: 40px;
-  }
-
-  .my_image {
-    top: -1000px;  
-    left: 40px;  
-  }
-
-  .rc_car {
-    top: -930px;
-    left: 0px;
-  }
-}
-
-@media (max-width: 991px) {
-  .my_image {
-    top: -1520px;  
-    left: 70px;  
-  }
-
-  .rc_car {
-    top: -1420px;  
-    left: 0px; 
-  }
-
-  .resume {
-    right: -20px;
-  }
-
-  .intro {
-    left: 90px;
-  }
-}
-
+/* below this the two-column hero stops paying for itself: the rail becomes
+   a horizontal strip under the text and everything shares one column */
 @media (max-width: 900px) {
-  .heading-wrapper {
-    margin: 110px auto 0 auto;
-  }
-  .intro {
-    padding: 0 16px;
-    font-size: 20px;
-    left: 90px;
-  }
-}
-
-@media (max-width: 768px) {
-  .heading-wrapper {
-    margin: 110px auto 0 auto;
-  }
-  .intro {
-    padding: 0 16px;
-    font-size: 20px;
-    left: 170px;
-  }
-  .resume {
-    right: 16px;
-  }
-  .my_image {
-    top: 750px;  
-    left: -50px;  
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 110px;
+    row-gap: 48px;
   }
 
-  .rc_car {
-    top: 820px;  
-    left: -70px; 
+  .photo-rail {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 0;
   }
 }
 
 @media (max-width: 475px) {
-  .centered {
-    font-size: 40px;
-  }
-  .resume {
-    font-size: small;
-    right: 10px;
-  }
   .intro {
-    font-size: 18px;
-  }
-  .my_image {
-    top: 750px;  
-    left: 40px;  
+    font-size: 20px;
   }
 
-  .rc_car {
-    top: 820px;  
-    left: -20px;
+  .rail-photo {
+    width: 120px;
+    height: 120px;
   }
 }
 
@@ -359,13 +250,15 @@ ul {
   height: 200px;
   object-fit: cover;
 }
+/* sits in the gutter between the text column and the photo rail */
 .lamp-bulb {
   position: absolute;
-  top: -230px;
-  left: 82%;
+  top: -250px;
+  left: 68%;
   transform: translateX(-50%);
-  width: 220px;
+  width: 200px;
   opacity: 0.55;
+  pointer-events: none;
 }
 .lamp-bulb::after {
   content: "";
