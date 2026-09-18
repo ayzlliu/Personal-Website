@@ -286,9 +286,11 @@ body::before {
   font-size: 17px;
   line-height: 1.45;
 }
+/* left-aligned inside its column, not centered: an auto left margin pushed
+   each card off the heading's axis by half the leftover column width */
 .project-card-sm {
   max-width: 370px;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 1rem 0;
   font-size: 0.9rem;
 }
 .project-card-sm .card-img-top {
