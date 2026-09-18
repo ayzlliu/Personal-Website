@@ -186,10 +186,12 @@ body::before {
   margin-top: 130px;
 }
 
-/* on its own page there is no hero above it, so it picks up the same top
-   rhythm the hero has on the home page */
+/* on its own page there is no hero above it, so it sits tighter than the
+   hero does: pulled 5vw back out of the page gutter and 5vh up, since a
+   grid of cards needs less breathing room above it than a title does */
 .projects-page {
-  margin-top: 96px;
+  margin-top: calc(96px - 5vh);
+  margin-left: -5vw;
 }
 
 .section-heading {
