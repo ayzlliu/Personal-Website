@@ -11,16 +11,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <img class="lamp-bulb" src="hanging_lamp.png" alt="">
-
     <div class="page">
         <header class="site-nav">
             <a href="https://drive.google.com/file/d/1VOfpkG4gWBabNnn5wwPnrDvvU5tSWnXs/view?usp=sharing"
-                target="_blank" rel="noopener" class="resume">Resume</a>
+                target="_blank" rel="noopener">resume</a>
+            <a href="projects.html">projects</a>
         </header>
 
         <div class="hero">
@@ -30,35 +31,41 @@
                 <div class="intro">
                     I'm studying
                     <span class="accent-underline">Systems Design Engineering</span> at the
-                    <span class="accent-underline">University of Waterloo.</span>
+                    <span class="accent-underline">University of Waterloo</span>
                 </div>
 
                 <div class="experience">
+                    <p class="section-label"><span class="accent-underline">currently, I'm&hellip;</span></p>
                     <ul>
                         <li>
-                            <span class="accent-underline">Currently,</span> I'm contributing
-                            alongside a VR design team to implement and develop a real-time text representation
-                            pipeline in Unity using the Meta XR SDK and C#
-                            scripts to aggregate and describe GameObjects and user perceptions within VR environments.
+                            building U-Net-based machine learning models at LOWP Technology to reverse-engineer
+                            integrated circuit layouts from SEM imagery
                         </li>
 
                         <li>
-                            <span class="accent-underline">In the past, I:</span>
-                            <ul>
-                                <li> Built and trained a CNN for traffic sign recognition using
-                                    <span class="accent-underline">TensorFlow</span>,
-                                    preprocessing image data with
-                                    <span class="accent-underline">OpenCV and NumPy</span> for consistent input
-                                    representation.
-                                </li>
+                            looking for W2027 internships, let's get in touch!
+                        </li>
+                    </ul>
+                </div>
 
-                                <li> Developed a full-stack web-based platform using
-                                    <span class="accent-underline">Python, HTML/CSS,
-                                        JavaScript, SQL, Jinja</span>,
-                                    with an enhanced UI that provides an intuitive and responsive interface that allows
-                                    for user blog management.
-                                </li>
-                            </ul>
+                <div class="past-block">
+                    <p class="section-label"><span class="accent-underline">in the past, I&hellip;</span></p>
+                    <ul>
+                        <li>
+                            built and trained a CNN for traffic sign recognition using <span class="tech">TensorFlow</span>,
+                            preprocessing image data with <span class="tech">OpenCV</span> and
+                            <span class="tech">NumPy</span> for consistent input representation
+                        </li>
+
+                        <li>
+                            developed a full-stack web platform in <span class="tech">Python</span>,
+                            <span class="tech">Flask</span> and <span class="tech">SQL</span>, with a responsive
+                            interface for user blog management
+                        </li>
+
+                        <li>
+                            modelled an open-ended vehicle assembly in <span class="tech">SolidWorks</span>,
+                            including BOM, section, exploded and assembly drawings
                         </li>
                     </ul>
                 </div>
@@ -71,83 +78,6 @@
             </aside>
         </div>
 
-        <section class="projects-section mt-5">
-            <hr class="my-5">
-            <h2 class="text-center mb-4">Projects</h2>
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4" style="margin-bottom: 30px;">
-                        <div class="card h-100 border rounded-4 shadow-sm project-card-sm">
-                            <img src="thoughtbubbleSS.png" class="card-img-top" alt="Project 1 Image">
-                            <div class="card-body">
-                                <h5 class="card-title">Thought Bubble</h5>
-                                <p class="card-text">Web-based platform with an enhanced UI
-                                    that allows for user blog management.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4" style="margin-bottom: 30px;">
-                        <div class="card h-100 border rounded-4 shadow-sm project-card-sm">
-                            <img src="vehicleSS.png" class="card-img-top" alt="Project 2 Image">
-                            <div class="card-body">
-                                <h5 class="card-title">Open-ended Vehicle Model</h5>
-                                <p class="card-text">Custom vehicle design modelled using Solidworks. Includes BOM,
-                                    section view, exploded view, and assembly diagrams.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4" style="margin-bottom: 30px;">
-                        <div class="card h-100 border rounded-4 shadow-sm project-card-sm">
-                            <img src="Roll-A-Ball Image.png" class="card-img-top" alt="Project 1 Image">
-                            <div class="card-body">
-                                <h5 class="card-title">Roll-A-Ball Game Application</h5>
-                                <p class="card-text">A 3D casual game developed in Unity with C#, incorporating physics,
-                                    input handling, basic scripting, and an AI-controlled opponent to enhance gameplay.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4" style="margin-bottom: 30px;">
-                        <div class="card h-100 border rounded-4 shadow-sm project-card-sm">
-                            <img src="meta-sdk-onboarding.png" class="card-img-top" alt="Project 1 Image">
-                            <div class="card-body">
-                                <h5 class="card-title">Hand Gesture Interaction in VR Interface</h5>
-                                <p class="card-text">Utilizing the Meta Software Development Kit and XR Simulator in
-                                    Unity to enable interactions with VR objects based on hand pose recognitions.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4" style="margin-bottom: 30px;">
-                        <div class="card h-100 border rounded-4 shadow-sm project-card-sm">
-                            <img src="Screenshot 2025-05-20 at 3.33.55 PM.png" class="card-img-top"
-                                alt="Project 1 Image">
-                            <div class="card-body">
-                                <h5 class="card-title">Color Classifier Neural Network Model</h5>
-                                <p class="card-text">Neural network learning model built using PyTorch to classify RGB
-                                    colors as 'cool' or 'warm' through supervised training and gradiant descent.
-                                    Leverages fundamental ML concepts and optimal model training practices.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4" style="margin-bottom: 30px;">
-                        <div class="card h-100 border rounded-4 shadow-sm project-card-sm">
-                            <img src="Screenshot 2026-01-19 at 11.39.29 PM.png" class="card-img-top"
-                                alt="Project 1 Image">
-                            <div class="card-body">
-                                <h5 class="card-title">CTraffic Sign Recognition CNN</h5>
-                                <p class="card-text">Neural network model implemented using PyTorch 
-                                    to classify colors through supervised training and gradiant descent.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <div class="logos">
             <a href="https://github.com/ayzlliu" target="_blank" rel="noopener" aria-label="GitHub"><i
                     class="fa">&#xf09b;</i></a>
