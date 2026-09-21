@@ -65,6 +65,14 @@ body::before {
   border-radius: 50%;
 }
 
+/* top and bottom only: shifted left by one full diameter. transform rather
+   than margin so the rail's own box, and the hero grid column it sits in,
+   stay put. the middle photo keeps the rail's natural position */
+.rail-photo:first-child,
+.rail-photo:last-child {
+  transform: translateX(-150px);
+}
+
 .centered {
   font-family: "Lora", serif;
   font-optical-sizing: auto;
@@ -187,11 +195,38 @@ body::before {
 }
 
 /* on its own page there is no hero above it, so it sits tighter than the
-   hero does: pulled 5vw back out of the page gutter and 5vh up, since a
-   grid of cards needs less breathing room above it than a title does */
+   hero does: 5vh up, since a grid of cards needs less breathing room above
+   it than a title does. centered rather than hung off the left gutter */
 .projects-page {
   margin-top: calc(96px - 5vh);
-  margin-left: -5vw;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1150px;
+}
+
+/* left-aligned again, flush with the left edge of the centered card grid */
+.projects-page .section-heading {
+  text-align: left;
+}
+
+/* the home page hangs its content off a deep left gutter; a centered grid
+   needs symmetric padding instead, or "centered" would sit 65px right */
+.page-centered {
+  padding-left: clamp(24px, 5vw, 96px);
+  padding-right: clamp(24px, 5vw, 96px);
+}
+
+/* the centered page drops the home page's 10vw inset, so the footer would
+   sit 10vw left of where it does on the home page. put it back, so the
+   icons land on the same axis across both pages */
+.page-centered .logos {
+  margin-left: 10vw;
+}
+
+/* centered within their columns, matching the centered heading above */
+.projects-page .project-card-sm {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-heading {
@@ -205,7 +240,7 @@ body::before {
   display: flex;
   justify-content: flex-start;
   gap: 22px;
-  margin-top: 90px;
+  margin-top: calc(90px - 5vh);
   margin-bottom: 90px;
 }
 
@@ -226,6 +261,11 @@ body::before {
 @media (max-width: 900px) {
   .page {
     padding-left: clamp(24px, 5vw, 96px);
+  }
+
+  /* the home page has no 10vw inset down here, so neither should the footer */
+  .page-centered .logos {
+    margin-left: 0;
   }
 
   .hero {
